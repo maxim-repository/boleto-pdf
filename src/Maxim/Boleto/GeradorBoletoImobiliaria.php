@@ -25,7 +25,7 @@ class GeradorBoletoImobiliaria
             $PDF->Image($boleto->getEmpresa()->getLogo(), 11, 11, 30, 18);
 
             $PDF->SetFont('Arial', 'B', 9);
-            $PDF->Cell(100, 3, $boleto->getEmpresa()->getNome(), '', 0, 'C');
+            $PDF->Cell(100, 3, utf8_decode($boleto->getEmpresa()->getNome()), '', 0, 'C');
 
             $PDF->SetFont('Arial', 'B', 8);
             $PDF->Cell(40, 3, '', 'R', 1, 'C');
@@ -34,7 +34,7 @@ class GeradorBoletoImobiliaria
             $PDF->Cell(50, 3, '', 'L', 0, 'L');
 
             $PDF->SetFont('Arial', '', 8);
-            $PDF->Cell(100, 3, $boleto->getEmpresa()->getEndereco(), '', 0, 'C');
+            $PDF->Cell(100, 3, utf8_decode($boleto->getEmpresa()->getEndereco()), '', 0, 'C');
 
             $PDF->SetFont('Arial', '', 8);
             $PDF->Cell(40, 3, 'Recibo do Pagador', 'R', 1, 'C');
@@ -44,7 +44,7 @@ class GeradorBoletoImobiliaria
 
             $PDF->SetFont('Arial', '', 8);
             $PDF->Cell(100, 3,
-                "{$boleto->getEmpresa()->getCep()} {$boleto->getEmpresa()->getCidade()}/{$boleto->getEmpresa()->getUf()} - {$boleto->getEmpresa()->getFone()}",
+                utf8_decode("{$boleto->getEmpresa()->getCep()} {$boleto->getEmpresa()->getCidade()}/{$boleto->getEmpresa()->getUf()} - {$boleto->getEmpresa()->getFone()}"),
                 '', 0, 'C');
 
             $PDF->SetFont('Arial', '', 8);
