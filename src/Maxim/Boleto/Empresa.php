@@ -47,7 +47,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getNome(): string
+    public function getNome()
     {
         return $this->nome;
     }
@@ -56,7 +56,7 @@ class Empresa
      * @param string $nome
      * @return Empresa
      */
-    public function setNome(string $nome): Empresa
+    public function setNome($nome)
     {
         $this->nome = $nome;
 
@@ -66,7 +66,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getLogo(): string
+    public function getLogo()
     {
         return $this->logo;
     }
@@ -75,7 +75,7 @@ class Empresa
      * @param string $logo
      * @return Empresa
      */
-    public function setLogo(string $logo): Empresa
+    public function setLogo($logo)
     {
         $this->logo = $logo;
 
@@ -85,7 +85,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getCpfCnpj(): string
+    public function getCpfCnpj()
     {
         return $this->cpfCnpj;
     }
@@ -94,7 +94,7 @@ class Empresa
      * @param string $cpfCnpj
      * @return Empresa
      */
-    public function setCpfCnpj(string $cpfCnpj): Empresa
+    public function setCpfCnpj($cpfCnpj)
     {
         $this->cpfCnpj = $cpfCnpj;
 
@@ -104,7 +104,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getEndereco(): string
+    public function getEndereco()
     {
         return $this->endereco;
     }
@@ -113,7 +113,7 @@ class Empresa
      * @param string $endereco
      * @return Empresa
      */
-    public function setEndereco(string $endereco): Empresa
+    public function setEndereco($endereco)
     {
         $this->endereco = $endereco;
 
@@ -123,7 +123,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getCep(): string
+    public function getCep()
     {
         return $this->cep;
     }
@@ -132,7 +132,7 @@ class Empresa
      * @param string $cep
      * @return Empresa
      */
-    public function setCep(string $cep): Empresa
+    public function setCep($cep)
     {
         $this->cep = $cep;
 
@@ -142,7 +142,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getCidade(): string
+    public function getCidade()
     {
         return $this->cidade;
     }
@@ -151,7 +151,7 @@ class Empresa
      * @param string $cidade
      * @return Empresa
      */
-    public function setCidade(string $cidade): Empresa
+    public function setCidade($cidade)
     {
         $this->cidade = $cidade;
 
@@ -161,7 +161,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getUf(): string
+    public function getUf()
     {
         return $this->uf;
     }
@@ -170,7 +170,7 @@ class Empresa
      * @param string $uf
      * @return Empresa
      */
-    public function setUf(string $uf): Empresa
+    public function setUf($uf)
     {
         $this->uf = $uf;
 
@@ -180,7 +180,7 @@ class Empresa
     /**
      * @return string
      */
-    public function getFone(): string
+    public function getFone()
     {
         return $this->fone;
     }
@@ -189,7 +189,7 @@ class Empresa
      * @param string $fone
      * @return Empresa
      */
-    public function setFone(string $fone): Empresa
+    public function setFone($fone)
     {
         $this->fone = $fone;
 

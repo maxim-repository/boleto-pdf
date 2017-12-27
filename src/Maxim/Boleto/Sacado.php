@@ -208,7 +208,6 @@ class Sacado
 
     /**
      * @param mixed $unidade
-     * @return CedenteImobiliaria
      */
     public function setUnidade($unidade)
     {
