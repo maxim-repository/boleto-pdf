@@ -183,12 +183,39 @@ class GeradorBoletoImobiliaria
 
                 $PDF->Cell(2, 3, '', 'LR', 0, '');
 
-                $coluna1 = isset($boleto->getDemonstrativos()[$i]) ? utf8_decode($boleto->getDemonstrativos()[$i]) : '';
-                $PDF->Cell(93, 3, $coluna1, '', 0, '');
+                if (isset($boleto->getDemonstrativos()[$i])) {
 
-                $coluna1 = isset($boleto->getDemonstrativos()[$c]) ? utf8_decode($boleto->getDemonstrativos()[$c]) : '';
-                $PDF->Cell(93, 3, $coluna1, '', 0, '');
-                $PDF->Cell(2, 3, '', 'RL', 1, '');
+                    $demonstrativo = $boleto->getDemonstrativos()[$i];
+
+                    if (isset($demonstrativo['valor']) && $demonstrativo['valor'] != '') {
+                        $PDF->Cell(78, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
+                        $PDF->Cell(15, 3, $demonstrativo['valor'], '', 0, 'R');
+                    } else {
+                        $PDF->Cell(93, 3, $demonstrativo['mensagem'], '', 0, '');
+                    }
+
+                } else {
+                    $PDF->Cell(93, 3, '', '', 0, '');
+                }
+
+
+                if (isset($boleto->getDemonstrativos()[$c])) {
+
+                    $demonstrativo = $boleto->getDemonstrativos()[$c];
+
+                    if (isset($demonstrativo['valor']) && $demonstrativo['valor'] != '') {
+                        $PDF->Cell(78, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
+                        $PDF->Cell(15, 3, $demonstrativo['valor'], '', 0, 'R');
+                    } else {
+                        $PDF->Cell(93, 3, $demonstrativo['mensagem'], '', 0, '');
+                    }
+
+                } else {
+                    $PDF->Cell(93, 3, '', '', 0, '');
+                }
+
+                $PDF->Cell(2, 3, '', 'LR', 1, '');
+
             }
 
             //----------------------------------------------------------------------------------------------------------
