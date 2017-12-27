@@ -74,7 +74,9 @@ class GeradorBoletoImobiliaria
             $PDF->SetFont('Arial', '', 7);
             $PDF->Cell(18, 2, utf8_decode('ENDEREÇO: '), '', 0, '');
             $PDF->SetFont('Arial', 'B', 7);
-            $PDF->Cell(120, 2, strtoupper(utf8_decode("{$boleto->getCedente()->getEndereco()} {$boleto->getCedente()->getCidade()} {$boleto->getCedente()->getUf()}")), '', 0, '');
+
+            $cedenteEndereco = !is_null($boleto->getSacado()->getEnderecoLogradouro()) ? $boleto->getSacado()->getEnderecoLogradouro() : '';
+            $PDF->Cell(120, 2, strtoupper(utf8_decode("$cedenteEndereco {$boleto->getSacado()->getCidade()} {$boleto->getSacado()->getUf()}")), '', 0, '');
             $PDF->SetFont('Arial', 'B', 10);
             $PDF->Cell(48, 4, $boleto->getDataVencimento()->format('d/m/Y'), 'BL', 0, 'C');
             $PDF->Cell(2, 3, '', 'LR', 1, '');
@@ -335,7 +337,7 @@ class GeradorBoletoImobiliaria
             $PDF->Cell(190, 5, utf8_decode("{$boleto->getSacado()->getNome()} - {$boleto->getSacado()->getCpfCnpj()}"), 'LR', 1, 'L');
             $PDF->Cell(190, 5,
                 utf8_decode(
-                    $boleto->getSacado()->getEnderecoLogradouro() . ", " . $boleto->getSacado()->getNumeroLogradouro()
+                    $boleto->getSacado()->getEnderecoLogradouro()
                 ), 'LR', 1, 'L');
 
             //----------------------------------------------------------------------------------------------------------
