@@ -335,7 +335,7 @@ class GeradorBoletoImobiliaria
             $PDF->Cell(190, 5, utf8_decode("{$boleto->getSacado()->getNome()} - {$boleto->getSacado()->getCpfCnpj()}"), 'LR', 1, 'L');
             $PDF->Cell(190, 5,
                 utf8_decode(
-                    $boleto->getSacado()->getTipoLogradouro() . " " . $boleto->getSacado()->getEnderecoLogradouro() . ", " . $boleto->getSacado()->getNumeroLogradouro()
+                    $boleto->getSacado()->getEnderecoLogradouro() . ", " . $boleto->getSacado()->getNumeroLogradouro()
                 ), 'LR', 1, 'L');
 
             //----------------------------------------------------------------------------------------------------------
