@@ -191,7 +191,7 @@ class GeradorBoletoImobiliaria
                         $PDF->Cell(78, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
                         $PDF->Cell(15, 3, $demonstrativo['valor'], '', 0, 'R');
                     } else {
-                        $PDF->Cell(93, 3, $demonstrativo['mensagem'], '', 0, '');
+                        $PDF->Cell(93, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
                     }
 
                 } else {
@@ -207,7 +207,7 @@ class GeradorBoletoImobiliaria
                         $PDF->Cell(78, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
                         $PDF->Cell(15, 3, $demonstrativo['valor'], '', 0, 'R');
                     } else {
-                        $PDF->Cell(93, 3, $demonstrativo['mensagem'], '', 0, '');
+                        $PDF->Cell(93, 3, utf8_decode($demonstrativo['mensagem']), '', 0, '');
                     }
 
                 } else {
