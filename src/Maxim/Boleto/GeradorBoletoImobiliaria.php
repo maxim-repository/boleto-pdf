@@ -307,7 +307,7 @@ class GeradorBoletoImobiliaria
 
             //----------------------------------------------------------------------------------------------------------
             $PDF->SetFont('Arial', '', 6);
-            $PDF->Cell(130, 3, utf8_decode('Instruções (Texto de Responsabilidade do Cedente)'), 'L', 0, 'L');
+            $PDF->Cell(130, 3, utf8_decode('Instruções (Texto de Responsabilidade do Beneficiário)'), 'L', 0, 'L');
             $PDF->Cell(60, 3, '(-)Desconto/Abatimentos', 'LR', 1, 'L');
 
             //----------------------------------------------------------------------------------------------------------
